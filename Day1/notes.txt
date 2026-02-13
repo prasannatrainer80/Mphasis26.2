@@ -1,0 +1,23 @@
+Web Application : These are the applications, that which are to be called from various places rather than where they are created.  If you want to make any distributed or robust applications, then we need the help of web applications. 
+
+You can create web applications in 2 ways as 
+
+(i) Scripting Languages Scripting languages are languages that which are interpreted, during runtime they takes lot of time to execute.
+
+(ii) Programming Languages : Programming languages are languages, that which are compiled first, during runtime they takes very less time to execute. 
+
+In Web Applications, we can implement 
+
+(i) Client-Side Scripting : Enables you to access the application from the same system, network traffic is low and a bit faster.
+
+(ii) Server-Side Scripting : Enables you to access the application from the server, network traffic is high and a bit slower. 
+
+1) Any intranet based application w.r.t. No Security, please opt for Client-Side scripting 
+
+2) Any internet based application w.r.t. Min. Security, please opt for both client-side/server-side scripting 
+
+3) Any internet based application w.r.t. High Securtity, please opt for Server-Side Scripting 
+
+
+https://github.com/prasannatrainer80/Mphasis26.2
+
