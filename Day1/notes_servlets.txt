@@ -183,7 +183,7 @@ The Servlet life cycle methods  :
 
 1. The web container loads the servlet class and creates one or more instances of the servlet class. 
 
-2. The web container invokdes the init() method of the servlet instance during the initialization of the servlet. init() method is invoked only once in the servlet life cycle. 
+2. The web container invokes the init() method of the servlet instance during the initialization of the servlet. init() method is invoked only once in the servlet life cycle. 
 
 3. The web container invokes the service() method to allow a servlet to process a client request. 
 
@@ -222,7 +222,7 @@ ServletRequest object contains the information about the service request made by
 
 ServletResponse object contains the information returned by the servlet to the client. 
 
-The service() method dispatches a client request to one of the request handler methods of the HttpServlet interface, such as doGet(), doPost(), doHead() or doPut(). 
+The service() method dispatches a client request to one of the request handler methods of the HttpServlet interface, such as doGet(), doPost()
 
 Note : service() method is not overridden in HttpServlet as the web container automatically invokes the service() method. 
 
@@ -236,13 +236,7 @@ The doPost() method : This method handles the requests in a servlet, which is se
 
 public void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException
 
-The doHead() method : This method handles requests sent using the HTTP HEAD method. Similar to the GET method, the HEAD method also sends requests to the server. 
 
-public void doHead(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException
-
-The doPut() method : Handles the requests send by the HTTP PUT method. This method allows a client to store the information on the server. You can use the PUT method to post the image file to the server. 
-
-public void doPut(HttpServletRequest req,HttpServletResonse res) throws ServletException,IOException
 
 ________________________________________________________
 
