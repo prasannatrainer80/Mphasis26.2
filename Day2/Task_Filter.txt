@@ -1,0 +1,11 @@
+Accept email
+<input type="text" name="email" /> 
+
+if email not contains @ then raise error as
+Invalid Email @ missing"
+
+if length of username < 8 chars raise error as
+"UserName must be min 8 chars"
+
+mphasistraining@gmail.com
+if no error print email
