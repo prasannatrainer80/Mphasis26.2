@@ -1,0 +1,14 @@
+1) Write a Program to reverse alternate words of a string using servlets
+
+Example :
+
+welcome to servlets programming
+welcome ot servlets gnimmargorp
+
+2) Write a program to count no.of Palindromes in given string
+
+Example
+
+liril is soap Malayalam is language madam is coming today
+
+Total 3 palindromes in above word
