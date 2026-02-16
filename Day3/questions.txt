@@ -6,7 +6,7 @@ substring : gram
 
 then say it exists and then print Success message in servlet
 
-2) Write a filter to replace all occurrences of each char with other char (without filter)
+2) Write a filter to replace all occurrences of each char with other char 
 
 Example : welcome to java 
 
