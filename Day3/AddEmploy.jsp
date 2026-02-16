@@ -1,3 +1,7 @@
+<%@page import="com.java.jsp.model.Gender"%>
+<%@page import="com.java.jsp.model.Employ"%>
+<%@page import="com.java.jsp.dao.EmployDaoImpl"%>
+<%@page import="com.java.jsp.dao.EmployDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -35,6 +39,19 @@
 			<input type="submit" value="Add Employ" />
 		</center>
 	</form>
-	
+	<%
+		if (request.getParameter("empno")!= null && 
+			request.getParameter("basic")!=null) {
+			EmployDao dao = new EmployDaoImpl();
+			Employ employ = new Employ();
+			employ.setEmpno(Integer.parseInt(request.getParameter("empno")));
+			employ.setName(request.getParameter("name"));
+			employ.setGender(Gender.valueOf(request.getParameter("gender")));
+			employ.setDept(request.getParameter("dept"));
+			employ.setDesig(request.getParameter("desig"));
+			employ.setBasic(Double.parseDouble(request.getParameter("basic")));
+			out.println(dao.addEmploy(employ));
+		}
+	%>
 </body>
 </html>
