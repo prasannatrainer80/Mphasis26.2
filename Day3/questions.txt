@@ -1,0 +1,29 @@
+1) Write a filter to check the given string exists with main string or not
+
+example : main string "welcome to java programming"
+
+substring : gram 
+
+then say it exists and then print Success message in servlet
+
+2) Write a filter to replace all occurrences of each char with other char (without filter)
+
+Example : welcome to java 
+
+replace o with @
+
+welc@me t@ java
+
+3) Create an employ form and print the values in servlet
+
+Empno -> input type number
+
+name -> input type text
+
+gender -> input type radio
+
+department -> dropdown values (Java/Dotnet/Sql)
+
+desig -> dropdown values(developer/tl/manager)
+
+salary -> input type number
