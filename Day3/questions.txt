@@ -27,3 +27,18 @@ department -> dropdown values (Java/Dotnet/Sql)
 desig -> dropdown values(developer/tl/manager)
 
 salary -> input type number
+
+4) Write a program to count each word how many times it exists 
+
+Example welcome to java
+
+w-> 1
+e ->2
+l -> 1
+c -> 1
+o -> 2
+m -> 1
+t -> 1
+j -> 1
+v ->1
+a -> 2
