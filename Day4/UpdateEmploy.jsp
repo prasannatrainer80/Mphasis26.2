@@ -1,3 +1,4 @@
+<%@page import="com.java.jsp.model.Gender"%>
 <%@page import="com.java.jsp.model.Employ"%>
 <%@page import="com.java.jsp.dao.EmployDaoImpl"%>
 <%@page import="com.java.jsp.dao.EmployDao"%>
@@ -38,5 +39,20 @@
 	<input type="submit" value="Update" />
 	</center>
 </form>
+<%
+	if (request.getParameter("empno")!=null && request.getParameter("basic")!=null) {
+		Employ employUpdated = new Employ();
+		employUpdated.setEmpno(Integer.parseInt(request.getParameter("empno")));
+		employUpdated.setName(request.getParameter("name"));
+		employUpdated.setGender(Gender.valueOf(request.getParameter("gender")));
+		employUpdated.setDept(request.getParameter("dept"));
+		employUpdated.setDesig(request.getParameter("desig"));
+		employUpdated.setBasic(Double.parseDouble(request.getParameter("basic")));
+		dao.updateEmploy(employUpdated);
+	%>
+		<jsp:forward page="EmployTable.jsp" />
+	<%
+	}
+%>
 </body>
 </html>
