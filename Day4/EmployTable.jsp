@@ -40,7 +40,7 @@
 			<a href=UpdateEmploy.jsp?empno=<%=employ.getEmpno() %>>Update</a>
 			</td>
 			<td> 
-			<a href=DeleteEmploy.jsp?empno=<%=employ.getEmpno() %>>Update</a>
+			<a href=DeleteEmploy.jsp?empno=<%=employ.getEmpno() %>>Delete</a>
 			</td>
 		</tr>
 	<%
