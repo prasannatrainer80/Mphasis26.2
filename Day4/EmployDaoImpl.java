@@ -99,4 +99,18 @@ public class EmployDaoImpl implements EmployDao {
 		return "Employ Record Updated...";
 	}
 
+	@Override
+	public int authenticate(String user, String pwd) throws ClassNotFoundException, SQLException {
+		connection = ConnectionHelper.getConnection();
+		String cmd = "select count(*) cnt from Login where username = ? "
+				+ " AND Passcode = ?";
+		psmt = connection.prepareStatement(cmd);
+		psmt.setString(1, user);
+		psmt.setString(2, pwd);
+		ResultSet rs = psmt.executeQuery();
+		rs.next();
+		int count = rs.getInt("cnt");
+		return count;
+	}
+
 }

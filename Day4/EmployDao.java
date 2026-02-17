@@ -11,4 +11,5 @@ public interface EmployDao {
 	String addEmploy(Employ employ) throws ClassNotFoundException, SQLException;
 	String deleteEmploy(int empno) throws ClassNotFoundException, SQLException;
 	String updateEmploy(Employ employ) throws ClassNotFoundException, SQLException;
+	int authenticate(String user, String pwd) throws ClassNotFoundException, SQLException;
 }	
