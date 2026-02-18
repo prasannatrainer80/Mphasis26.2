@@ -34,6 +34,11 @@ To perform all those operations, we have various tags known as
 <c:out /> : Used to print any value or message. 
 
 <c:out value="Good Morning" />
+ <dependency>
+   <groupId>com.mysql</groupId>
+   <artifactId>mysql-connector-j</artifactId>
+   <version>8.0.33</version>
+</dependency>
 
 
 
