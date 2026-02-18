@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="post" action="AddEmploy.jsp">
+<form method="post" action="UpdateEmploy.jsp">
 		<center>
 			Employ No : 
 			<input type="number" name="empno" /> <br/>
@@ -34,7 +34,7 @@
 			</select> <Br/>
 			Basic : 
 			<input type="number" name="basic" />
-			<input type="submit" value="Add Employ" />
+			<input type="submit" value="Update Employ" />
 		</center>
 	</form>
 	<c:if test="${param.empno !=null && param.basic !=null}">
@@ -44,16 +44,15 @@
 		password="root"
 	/>
 	<sql:update var="employUpdate" dataSource="${conn}">
-		Insert into Employ values(?,?,?,?,?,?)
-		<sql:param value="${param.empno}" />
+		update employ set name = ?, Gender = ?, Dept = ?, Desig = ?, Basic = ? WHERE Empno = ?
 		<sql:param value="${param.name}" />
 		<sql:param value="${param.gender}" />
 		<sql:param value="${param.dept}" />
 		<sql:param value="${param.desig}" />
 		<sql:param value="${param.basic}" />
-		
+		<sql:param value="${param.empno}" />
 	</sql:update>
-	<c:out value="Employ Record Inserted..." />
+	<c:out value="Employ Record Updated..." />
 	</c:if>
 </body>
 </html>
