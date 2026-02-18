@@ -1,0 +1,39 @@
+JSTL (Java Standard Tag Libraries) 
+
+	Allows you to write any java code using HTML tags. 
+
+Java code contains
+
+-> Statements
+
+-> Control Structures
+
+-> Variables
+
+-> Output statements 
+
+To perform all those operations, we have various tags known as
+
+(I) Core Tags
+
+(ii) Sql Tags
+
+(iii) Format Tags 
+
+<!-- Source: https://mvnrepository.com/artifact/jstl/jstl -->
+<dependency>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+
+(I) Core Tags 
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<c:out /> : Used to print any value or message. 
+
+<c:out value="Good Morning" />
+
+
+
