@@ -17,6 +17,14 @@ public class EmployDaoImpl {
 	SessionFactory sessionFactory;
 	Session session;
 	
+	public long totalRecords() {
+		sessionFactory = SessionHelper.getSession();
+		session = sessionFactory.openSession();
+		Criteria cr = session.createCriteria(Employ.class);
+		cr.setProjection(Projections.rowCount());
+		long count =(Long)cr.uniqueResult();
+		return count;
+	}
 	public List<String> showNames() {
 		sessionFactory = SessionHelper.getSession();
 		session = sessionFactory.openSession();
