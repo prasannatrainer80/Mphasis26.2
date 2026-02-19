@@ -6,6 +6,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 import com.java.hib.model.Employ;
@@ -16,6 +17,13 @@ public class EmployDaoImpl {
 	SessionFactory sessionFactory;
 	Session session;
 	
+	public List<String> showNames() {
+		sessionFactory = SessionHelper.getSession();
+		session = sessionFactory.openSession();
+		Criteria cr = session.createCriteria(Employ.class);
+		cr.setProjection(Projections.property("name"));
+		return cr.list();
+	}
 	public List<Employ> showByBasicDesc() {
 		sessionFactory = SessionHelper.getSession();
 		session = sessionFactory.openSession();
