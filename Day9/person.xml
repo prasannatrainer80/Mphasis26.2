@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="beanJobChennai" class="com.java.spr.JobDetails">
+		<property name="job" value="Software Engineer" />
+		<property name="company" value="Mphasis" />
+		<property name="location" value="Chennai" />
+	</bean>
+	<bean id="personRupesh" class="com.java.spr.Person">
+		<property name="id" value="1" />
+		<property name="name" value="Rupesh" />
+		<property name="jobDetails" ref="beanJobChennai" />
+		<property name="family">
+			<bean class="com.java.spr.Family">
+				<property name="city" value="Patna" />
+				<property name="state" value="Bihar" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="personArvind" class="com.java.spr.Person">
+		<property name="id" value="2" />
+		<property name="name" value="Arvind" />
+		<property name="jobDetails" ref="beanJobChennai" />
+		<property name="family">
+			<bean class="com.java.spr.Family">
+				<property name="city" value="Kadaloor" />
+				<property name="state" value="TamilNadu" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="personSelvi" class="com.java.spr.Person">
+		<property name="id" value="3" />
+		<property name="name" value="Selvi" />
+		<property name="jobDetails" ref="beanJobChennai" />
+		<property name="family">
+			<bean class="com.java.spr.Family">
+				<property name="city" value="Madhurai" />
+				<property name="state" value="TamilNadu" />
+			</bean>
+		</property>
+	</bean>
+</beans>
