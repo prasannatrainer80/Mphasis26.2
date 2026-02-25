@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+  		<property name="url" value="jdbc:mysql://localhost:3306/mphasis26"/>
+  		<property name="username" value="root" />
+  		<property name="password" value="root" />
+	</bean>
+	 <!-- NamedParameterJdbcTemplate -->
+    <bean id="namedJdbc"
+          class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg ref="ds"/>
+    </bean>
+	<bean id="employDaoNpImpl" class="com.java.spr.EmployDaoNpImpl">
+		 <property name="namedParameterJdbcTemplate" ref="namedJdbc"/>
+	</bean>
+</beans>
