@@ -1,0 +1,22 @@
+Customer
+   custId
+   custName
+   billAmount
+
+DeliveryAddress
+   addressId
+   City
+   Zipcode
+   mobileNo
+Vendor
+   vendorId
+   vendorName
+   vendorMobile
+
+OrderDetails
+    ordId
+    customer
+    deliveryAddress
+    vendor
+
+-> Vendor Details to be autowired 
