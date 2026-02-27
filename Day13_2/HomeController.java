@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.java.mvc.dao.EmployDao;
@@ -28,6 +29,17 @@ public class HomeController {
 		return new ModelAndView("updateemploy","employ",employ);
 	}
 	
+	@RequestMapping(value="/addemploy")
+	public ModelAndView addEmploy() {
+		return new ModelAndView("addemploy");
+	}
+	
+	@RequestMapping(value = "/saveemploy", method = RequestMethod.POST)
+	public ModelAndView saveEmploy(@ModelAttribute Employ employNew) {
+		employDao.addEmploy(employNew);
+		return new ModelAndView("redirect:/showemploy");
+	}
+
 	
 	@RequestMapping(value="/deleteemploy")
 	public ModelAndView deleteEmploy(HttpServletRequest req) {
