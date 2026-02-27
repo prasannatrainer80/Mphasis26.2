@@ -12,13 +12,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.java.mvc.model.Employ;
 
 @Controller
 public class HomeController {
-
 
 	private static List<Employ> employList = new ArrayList<>(Arrays.asList(
 		    new Employ(1, "Mythri", "FEMALE", "Java", "Programmer", 84824),
@@ -27,6 +27,24 @@ public class HomeController {
 		    new Employ(4, "Rishika", "FEMALE", "Java", "TL", 89022),
 		    new Employ(5, "Sravan", "MALE", "Sql", "Admin", 97222)
 		));
+	
+	@RequestMapping(value = "/saveemploy", method = RequestMethod.POST)
+	public ModelAndView saveEmploy(@ModelAttribute Employ employNew) {
+		System.out.println(employNew);
+	    employList.add(employNew);
+
+	    return new ModelAndView("redirect:/showemploy");
+	}
+
+	@RequestMapping(value="/addemploy")
+	public ModelAndView addEmploy() {
+		return new ModelAndView("addemploy");
+	}
+	
+	@RequestMapping(value="/showemploy")
+	public ModelAndView showEmploy() {
+		return new ModelAndView("showemploy","employList",employList);
+	}
 
 	
 	@RequestMapping(value="/nameresult")
