@@ -20,6 +20,14 @@ public class HomeController {
 	@Autowired
 	private EmployDao employDao;
 
+	@RequestMapping(value="/updateemploy")
+	public ModelAndView updateEmploy(HttpServletRequest request) {
+		int empno = Integer.parseInt(request.getParameter("empno"));
+		Employ employ = employDao.searchEmploy(empno);
+		return new ModelAndView("updateemploy","employ",employ);
+	}
+
+	
 	@RequestMapping(value="/loginresult")
 	public ModelAndView test(HttpServletRequest request) throws IOException
 	{
