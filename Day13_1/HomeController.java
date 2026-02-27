@@ -28,11 +28,55 @@ public class HomeController {
 		    new Employ(5, "Sravan", "MALE", "Sql", "Admin", 97222)
 		));
 	
+	@RequestMapping(value="/deleteemploy")
+	public ModelAndView deleteEmploy(HttpServletRequest request) {
+		int empno = Integer.parseInt(request.getParameter("empno"));
+		Employ employFound = null;
+		for (Employ employ : employList) {
+			if (employ.getEmpno() == empno) {
+				employFound = employ;
+				break;
+			}
+		}
+		employList.remove(employFound);
+		return new ModelAndView("redirect:/showemploy");
+	}
+	
+	@RequestMapping(value="/updatefinal")
+	public ModelAndView updateFinal(@ModelAttribute Employ employUpdated) {
+		for (Employ employ : employList) {
+			if (employ.getEmpno() == employUpdated.getEmpno()) {
+				employ.setName(employUpdated.getName());
+				employ.setGender(employUpdated.getGender());
+				employ.setDept(employUpdated.getDept());
+				employ.setDesig(employUpdated.getDesig());
+				employ.setBasic(employUpdated.getBasic());
+				break;
+			}
+		}
+//		employDao.updateEmploy(employUpdated);
+		return new ModelAndView("redirect:/showemploy");
+	}
+
+	
+	@RequestMapping(value="/updateemploy")
+	public ModelAndView updateEmploy(HttpServletRequest request) {
+		int empno = Integer.parseInt(request.getParameter("empno"));
+		Employ employFound = null;
+		for (Employ employ : employList) {
+			if (employ.getEmpno() == empno) {
+				employFound = employ;
+				break;
+			}
+		}
+		return new ModelAndView("updateemploy","employ",employFound);
+	}
+
+	
 	@RequestMapping(value = "/saveemploy", method = RequestMethod.POST)
 	public ModelAndView saveEmploy(@ModelAttribute Employ employNew) {
 		System.out.println(employNew);
 	    employList.add(employNew);
-
 	    return new ModelAndView("redirect:/showemploy");
 	}
 
@@ -45,7 +89,6 @@ public class HomeController {
 	public ModelAndView showEmploy() {
 		return new ModelAndView("showemploy","employList",employList);
 	}
-
 	
 	@RequestMapping(value="/nameresult")
 	public ModelAndView nameRequest(HttpServletRequest request) {
@@ -57,7 +100,6 @@ public class HomeController {
 		mv.addObject("lastName",lastName);
 		mv.addObject("fullName",fullName);
 		return mv;
-
 	}
 	
 	@RequestMapping(value="/shownames")
@@ -71,6 +113,7 @@ public class HomeController {
 		names.add("Suganya");
 		return new ModelAndView("shownames","names",names);
 	}
+	
 	@RequestMapping(value="/loginauth")
 	public ModelAndView auth(HttpServletRequest req) {
 		String user = req.getParameter("userName");
@@ -102,10 +145,12 @@ public class HomeController {
 		String sname = req.getParameter("sname");
 		return new ModelAndView("demoshow","sname",sname);
 	}
+	
 	@RequestMapping(value="/manoj")
 	public ModelAndView manoj() {
 		return new ModelAndView("manoj");
 	}
+	
 	@RequestMapping(value="/arvind")
 	public ModelAndView arvind() {
 		return new ModelAndView("arvind");
