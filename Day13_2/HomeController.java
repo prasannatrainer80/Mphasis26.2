@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,6 +26,21 @@ public class HomeController {
 		int empno = Integer.parseInt(request.getParameter("empno"));
 		Employ employ = employDao.searchEmploy(empno);
 		return new ModelAndView("updateemploy","employ",employ);
+	}
+	
+	
+	@RequestMapping(value="/deleteemploy")
+	public ModelAndView deleteEmploy(HttpServletRequest req) {
+		int empno = Integer.parseInt(req.getParameter("empno"));
+		employDao.deleteEmploy(empno);
+		return new ModelAndView("redirect:/showemploy");
+	}
+
+
+	@RequestMapping(value="/updatefinal")
+	public ModelAndView updateFinal(@ModelAttribute Employ employUpdated) {
+		employDao.updateEmploy(employUpdated);
+		return new ModelAndView("redirect:/showemploy");
 	}
 
 	
