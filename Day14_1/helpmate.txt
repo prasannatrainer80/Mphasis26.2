@@ -1,0 +1,20 @@
+http://localhost:8080/RestExample/webapi/training/location
+
+http://localhost:8080/RestExample/webapi/training/topic
+
+http://localhost:8080/RestExample/webapi/greeting/salute/Vamsi
+
+http://jsonplaceholder.typicode.com/posts
+
+  <dependency>
+    <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+    <version>2.3.1</version>
+</dependency>
+
+<dependency>
+    <groupId>org.glassfish.jaxb</groupId>
+    <artifactId>jaxb-runtime</artifactId>
+    <version>2.3.1</version>
+</dependency>
+
