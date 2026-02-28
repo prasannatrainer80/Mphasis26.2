@@ -21,3 +21,14 @@ http://jsonplaceholder.typicode.com/posts
 https://formatjsononline.com/api-tester
 
 http://localhost:8080/RestExample/webapi/employservice/employshow
+
+ http://localhost:8080/RestExample/webapi/employservice/employsearch/1
+
+{
+  "empno": 1,
+  "name": "Mythri",
+  "gender": "FEMALE",
+  "dept": "Java",
+  "desig": "Programmer",
+  "basic": 88424.22
+}
