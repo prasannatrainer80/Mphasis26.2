@@ -1,0 +1,27 @@
+Spring MVC is a Java-based web framework built on the Model-View-Controller (MVC) design pattern, part of the larger Spring Framework ecosystem. It separates the Model (application data), View (presentation layer), and Controller (business logic) to promote cleaner, maintainable, and testable code.
+
+At its core, DispatcherServlet acts as the Front Controller, intercepting all incoming HTTP requests, delegating them to appropriate controllers, and resolving the correct view for rendering.
+
+Key Components
+
+Model: Holds application data, often as POJOs or DTOs.
+
+View: Renders the model data, typically using JSP, JSTL, Thymeleaf, or FreeMarker.
+
+Controller: Handles requests, processes data, and returns a ModelAndView object.
+
+ViewResolver: Maps logical view names to actual view files.
+
+HandlerMapping: Determines which controller method should handle a request.
+
+Basic Workflow
+
+Client Request → Intercepted by DispatcherServlet.
+
+Handler Mapping → Finds the appropriate controller.
+
+Controller Execution → Processes request, returns ModelAndView.
+
+ViewResolver → Resolves view name to actual view.
+
+Response Rendering → View renders data back to the client.

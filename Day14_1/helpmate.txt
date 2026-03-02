@@ -24,7 +24,11 @@ http://localhost:8080/RestExample/webapi/employservice/employshow
 
  http://localhost:8080/RestExample/webapi/employservice/employsearch/1
 
-http://localhost:8080/RestExample/webapi/employservice/ employInsert
+http://localhost:8080/RestExample/webapi/employservice/employInsert
+
+http://localhost:8080/RestExample/webapi/employservice/employUpdate
+
+http://localhost:8080/RestExample/webapi/employservice/employDelete/2
 
 {
   "empno": 1,
@@ -34,3 +38,11 @@ http://localhost:8080/RestExample/webapi/employservice/ employInsert
   "desig": "Programmer",
   "basic": 88424.22
 }
+
+http://localhost:8080/RestJdbc/webapi/employservice/showemploy
+
+http://localhost:8080/RestJdbc/webapi/employservice/searchemploy/1
+
+
+
+
