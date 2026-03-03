@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>Welcome to ThymeLeaf Programming...</p>
+	<form th:action="@{/greeting}" method="get">
+    Student Name :
+    <input type="text" name="name" th:value="${name}" />
+    <br/><br/>
+    <input type="submit" value="Show" />
+</form>
+	
+</body>
+</html>

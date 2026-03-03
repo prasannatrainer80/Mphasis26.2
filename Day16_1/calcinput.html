@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculation</title>
+</head>
+<body>
+<form th:action="@{/calcresult}" method="get">
+    <center>
+        First No :
+        <input type="number" name="firstNo" th:value="${firstNo}" />
+        <br/><br/>
+        Second No :
+        <input type="number" name="secondNo" th:value="${secondNo}" />
+        <br/><br/>
+        <input type="submit" value="Calculation" />
+    </center>
+</form>
+</body>
+</html>
