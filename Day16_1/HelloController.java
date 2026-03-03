@@ -8,6 +8,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HelloController {
 
+
+	
+	@GetMapping(value="/calcinput")
+	public String calcinput() {
+		return "calcinput";
+	}
+	
+	
+	
 	@GetMapping(value="/")
 	public String hello() {
 		return "hello";
