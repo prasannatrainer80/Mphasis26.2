@@ -7,8 +7,8 @@
        http://www.springframework.org/schema/aop   
        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-<bean id="beanBoarding" class="com.java.aop.Boarding" />
-<bean id="beanPreboarding" class="com.java.aop.PreBoarding" />     
-<bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator">
-   </bean>  
- </beans>
+	<bean id="beanMeeting" class="com.java.aop.Meeting" />
+	<bean id="beanPreMeeting" class="com.java.aop.PreMeeting" />    
+	<bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator">
+   </bean>    
+</beans>
