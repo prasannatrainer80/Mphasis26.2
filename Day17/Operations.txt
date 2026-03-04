@@ -1,0 +1,12 @@
+1) Employee Show
+
+2) Search Employee
+
+3) Add Employee
+
+4) Show Employee LeaveHistory
+
+5) Show Employee Pending Leave History
+
+6) ApplyLeave
+
