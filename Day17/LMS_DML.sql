@@ -1,6 +1,6 @@
 use lms;
 
-Insert into Employee(EmpId,EmpName,EmpEmail,MobileNo,DateOfJion,ManagerId,LeaveAvail)
+Insert into Employee(EmpId,EmpName,EmpEmail,MobileNo,DateOfJoin,ManagerId,LeaveAvail)
 values(1000,'Sagar','sagar@gmail.com','847273444','2023-10-08',null,12),
 (1001,'Abhishek','abhi225@gmail.com','884823455','2023-09-09',1000,12),
 (1002,'Kaushik','kaushik@gmail.com','90042344','2023-01-01',1000,15),
