@@ -5,10 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans   
        http://www.springframework.org/schema/beans/spring-beans.xsd   
        http://www.springframework.org/schema/aop   
-       http://www.springframework.org/schema/aop/spring-aop.xsd">
-
-	<bean id="beanMeeting" class="com.java.aop.Meeting" />
-	<bean id="beanPreMeeting" class="com.java.aop.PreMeeting" />    
-	<bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator">
-   </bean>    
+       http://www.springframework.org/schema/aop/spring-aop.xsd">  
+  <bean id="beanJavaFsd" class="com.java.aop.JavaFsdTraining" />
+   <bean id="prereq" class="com.java.aop.JavaFsdTrainingAround" />
+   <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator">
+   </bean>  
 </beans>
