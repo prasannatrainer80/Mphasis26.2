@@ -25,7 +25,6 @@ public class CustomerService {
 		Customer customer = customerRepository.findByCusUserName(user);
 		System.out.println("Customer  " +customer);
 		return customer;
-		
 	}
 	
 	public List<Customer> showCustomer() {
