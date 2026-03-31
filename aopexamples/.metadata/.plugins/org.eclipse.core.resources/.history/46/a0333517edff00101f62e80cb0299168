@@ -1,0 +1,26 @@
+package com.java.aop;
+
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+
+@Aspect
+public class BoardingFormalities {
+
+	@Pointcut("execution(* com.java.aop.Boarding.*(..))")
+	public void assignProject() {}
+	
+	
+	@Before("assignProject()")
+	public void mcqExam() {
+		System.out.println("Please Check Cleared All Mcq Exams are Not...");
+		System.out.println("Check Capstone Project Completed or Not...");
+		
+	}
+	
+	@After("assignProject()")
+	public void assignLaptop() {
+		System.out.println("Please Provide Laptop for the new joinee");
+	}
+}

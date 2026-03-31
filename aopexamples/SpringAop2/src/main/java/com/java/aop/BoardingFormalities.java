@@ -1,0 +1,39 @@
+package com.java.aop;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+
+@Aspect
+public class BoardingFormalities {
+
+	@Pointcut("execution(* com.java.aop.Boarding.*(..))")
+	public void assignProject() {}
+	
+	
+	@Before("assignProject()")
+	public void mcqExam() {
+		System.out.println("Please Check Cleared All Mcq Exams are Not...");
+		System.out.println("Check Capstone Project Completed or Not...");
+		System.out.println("Test Case Report to be Ready");
+	}
+	
+	@After("assignProject()")
+	public void assignLaptop() {
+		System.out.println("Please Provide Laptop for the new joinee");
+		System.out.println("Map to Relevant Manager to Collect Project Details");
+	}
+	
+	@AfterReturning(
+			pointcut = "execution(* com.java.aop.Boarding.*(..))",
+			returning = "result")
+	public void myadvice(JoinPoint jp, Object result) {
+		System.out.println("Additional Output");
+		System.out.println("Method Signature  " + jp.getSignature());
+		System.out.println("Result  " +result);
+	}
+
+}
